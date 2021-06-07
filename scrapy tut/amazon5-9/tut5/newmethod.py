@@ -1,4 +1,5 @@
 from requests_html import HTMLSession
+# using requests_html
 
 urllist = [
     'https://www.amazon.com/VIZIO-Class-31-5-Diag-Smart/dp/B089JXY4SP/ref=sr_1_1?currency=INR&dchild=1&keywords=tv&qid=1621926279&s=computers-intl-ship&sr=1-1',
