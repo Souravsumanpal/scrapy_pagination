@@ -25,10 +25,14 @@ class QuoteSpider(scrapy.Spider):
             
             yield items
 
-        next_page = 'https://quotes.toscrape.com/page/'+ str(QuoteSpider.page_number) +'/'
+        # next_page = 'https://quotes.toscrape.com/page/'+ str(QuoteSpider.page_number) +'/'
+        next_page = response.css('.next a::attr(href)').extract()
 
-        if QuoteSpider.page_number <= 10:
-            QuoteSpider.page_number += 1 
-            yield response.follow(next_page, callback=self.parse)  
+        if next_page:
+            yield response.follow(next_page[0],callback = self.parse)
+
+        # if QuoteSpider.page_number <= 10:
+        #     QuoteSpider.page_number += 1 
+        #     yield response.follow(next_page, callback=self.parse)  
             
 
