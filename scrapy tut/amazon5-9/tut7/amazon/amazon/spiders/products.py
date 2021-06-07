@@ -1,5 +1,5 @@
 import scrapy
-
+# from ..items import AmazonItem
 
 
 class ProductsSpider(scrapy.Spider):
